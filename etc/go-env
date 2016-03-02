@@ -1,0 +1,9 @@
+HERE=`pwd`
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+cd go-root
+
+export GOPATH=`pwd`
+export PATH=$GOPATH/bin:$PATH
+
+cd $HERE

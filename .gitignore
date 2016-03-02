@@ -1,0 +1,4 @@
+/node_modules
+/go-server/gin-bin
+/prod/
+/etc/go-root

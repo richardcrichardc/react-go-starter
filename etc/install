@@ -1,0 +1,7 @@
+#!/bin/bash -e
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
+source go-env
+go get github.com/codegangsta/gin
+go get go-server

@@ -1,0 +1,20 @@
+#!/bin/bash -e
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
+source go-env
+
+set -v
+
+rm -fr ../prod/*
+
+go install go-server
+cp go-root/bin/go-server ../prod
+
+cp -r ../static ../prod
+
+mkdir ../prod/gen
+NODE_ENV=production webpack -p --progress --config ../webpack.config.prod.client.js
+
+NODE_ENV=production webpack --progress --config ../webpack.config.prod.server.js
+
