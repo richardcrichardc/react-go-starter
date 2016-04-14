@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-server/web"
 	"log"
 	"net/http"
 	"net/http/httputil"
@@ -9,12 +10,9 @@ import (
 )
 
 func main() {
-	log.SetFlags(log.Ldate | log.Ltime)
+	web.ExecAllQueries(schema[:])
 
-	//loadConfig()
-	//initDatabase()
-
-	mux := NewMux()
+	mux := web.NewMux()
 
 	mux.Static("/static/", "static")
 	mux.Static("/gen/", "gen")
